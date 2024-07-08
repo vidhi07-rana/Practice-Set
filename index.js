@@ -121,7 +121,7 @@ async function cherry(){
 }
 
 const main1 = async ()=>{
-    let a = await harry();
+    let a = await marry();
     console.log(a)
     let b = await cherry();
 
