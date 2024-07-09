@@ -11,43 +11,43 @@
 //     console.log(object[a])
 // }
 
-function fact(n) {
-    if (n < 0) {
-        console.log("The number is not valid");
-    } else if (n === 0) {
-        console.log("The factorial of 0 is 1");
-    } else {
-        let fac = 1; 
-        for (let i = 1; i <= n; i++) {
-            fac *= i;
-        }
-        console.log("The factorial of " + n + " is " + fac);
-        return fac; 
-    }
-}
-
-
-fact(4);
-
-
-
-let nae = "                    vidhi               ";
-console.log(nae.trimEnd());
-const num1 = [2,34,5,3,5]
-// for(let i=0; i<num.length;i++){
-//     console.log(num[i])
+// function fact(n) {
+//     if (n < 0) {
+//         console.log("The number is not valid");
+//     } else if (n === 0) {
+//         console.log("The factorial of 0 is 1");
+//     } else {
+//         let fac = 1; 
+//         for (let i = 1; i <= n; i++) {
+//             fac *= i;
+//         }
+//         console.log("The factorial of " + n + " is " + fac);
+//         return fac; 
+//     }
 // }
 
-num1.forEach((element)=>{
-    console.log(element*element);
-})
+
+// fact(4);
 
 
-const arr = [1,2,3,4];
-const a1 = arr.reduce((h1,h2)=>{
-return h1 + h2;
-});
-console.log(a1);
+
+// let nae = "                    vidhi               ";
+// console.log(nae.trimEnd());
+// const num1 = [2,34,5,3,5]
+// // for(let i=0; i<num.length;i++){
+// //     console.log(num[i])
+// // }
+
+// num1.forEach((element)=>{
+//     console.log(element*element);
+// })
+
+
+// const arr = [1,2,3,4];
+// const a1 = arr.reduce((h1,h2)=>{
+// return h1 + h2;
+// });
+// console.log(a1);
 
 
 
@@ -93,40 +93,68 @@ const num = [2,34,5,3,5]
 //async/await
 
 
-async function marry(){
+// async function marry(){
     
-let delhiWeather = new Promise((resolve, reject)=>{
-    setTimeout(()=>{ resolve("21 Deg")
-        console.log("the delhi has 21 deg");}, 7000);
+// let delhiWeather = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{ resolve("21 Deg")
+//         console.log("the delhi has 21 deg");}, 7000);
    
-})
+// })
  
-let bangloreWeather = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        console.log("the delhi has 27 deg")
-        resolve("27 Deg")
-    },10000);
-})
-let a =prompt("weather Information?")
-console.log(a)
- let delhiW = await delhiWeather;
- let bangLOREW = await bangloreWeather;
- return [delhiW, bangLOREW];
+// let bangloreWeather = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         console.log("the delhi has 27 deg")
+//         resolve("27 Deg")
+//     },10000);
+// })
+// let a =prompt("weather Information?")
+// console.log(a)
+//  let delhiW = await delhiWeather;
+//  let bangLOREW = await bangloreWeather;
+//  return [delhiW, bangLOREW];
 
 
+// }
+
+// async function cherry(){
+//     console.log("Hello now u are in cherry function");
+// }
+
+// const main1 = async ()=>{
+//     let a = await marry();
+//     console.log(a)
+//     let b = await cherry();
+
+// }
+
+// main1();
+
+async function sum(a,b){
+  return (a + b);
 }
 
-async function cherry(){
-    console.log("Hello now u are in cherry function");
+async function fetchdata(){
+    try{
+    let respones = await sum(2,6);
+    // console.log(data)
+    console.log(respones);
+    }catch(err){
+console.log("your getting error fetching data" + err)
+    }
 }
 
-const main1 = async ()=>{
-    let a = await marry();
-    console.log(a)
-    let b = await cherry();
+fetchdata();
 
+
+async function fetchdata1(){
+    try{
+    let respones = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let data = await respones.json();
+    console.log(data)
+   
+    }catch(err){
+console.log("your getting error fetching data" + err)
+    }
 }
 
-main1();
-
-
+fetchdata1();
