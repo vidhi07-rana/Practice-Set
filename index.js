@@ -1,4 +1,5 @@
 
+//objects in js
 // const object= {
 
 //     harry:20,
@@ -33,6 +34,8 @@
 
 // let nae = "                    vidhi               ";
 // console.log(nae.trimEnd());
+
+//Array
 // const num1 = [2,34,5,3,5]
 // // for(let i=0; i<num.length;i++){
 // //     console.log(num[i])
@@ -53,7 +56,7 @@
 
 
 
-const num = [2,34,5,3,5]
+// const num = [2,34,5,3,5]
 // for(let i=0; i<num.length;i++){
 //     console.log(num[i])
 // }
@@ -63,6 +66,8 @@ const num = [2,34,5,3,5]
 // })
 
 
+
+//Promises
 // let p1 = new Promise((resolve, reject)=>{
 //     setTimeout(()=>{
 //         console.log("Resolved after 2 seconds");
@@ -91,7 +96,6 @@ const num = [2,34,5,3,5]
 
 
 //async/await
-
 
 // async function marry(){
     
@@ -129,32 +133,237 @@ const num = [2,34,5,3,5]
 
 // main1();
 
-async function sum(a,b){
-  return (a + b);
-}
 
-async function fetchdata(){
-    try{
-    let respones = await sum(2,6);
-    // console.log(data)
-    console.log(respones);
-    }catch(err){
-console.log("your getting error fetching data" + err)
-    }
-}
+//fetching a data with async and await 
+// async function sum(a,b){
+//   return (a + b);
+// }
 
-fetchdata();
+// async function fetchdata(){
+//     try{
+//     let respones = await sum(2,6);
+//     // console.log(data)
+//     console.log(respones);
+//     }catch(err){
+// console.log("your getting error fetching data" + err)
+//     }
+// }
 
+// fetchdata();
 
-async function fetchdata1(){
-    try{
-    let respones = await fetch("https://jsonplaceholder.typicode.com/posts");
-    let data = await respones.json();
-    console.log(data)
+// //fetching data from json server 
+// async function fetchdata1(){
+//     try{
+//     let respones = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     let data = await respones.json();
+//     console.log(data)
+//     console.log(respones.status)
+//     console.log(respones.statusText)
    
-    }catch(err){
-console.log("your getting error fetching data" + err)
-    }
+//     }catch(err){
+// console.log("your getting error fetching data" + err)
+//     }
+// }
+
+// fetchdata1();
+
+// //some example of js
+// function prime(n){
+
+//     for(let i=2 ; i<n; i++){
+//         if(n % i === 0){
+//             return false;
+//         }
+//         return true;
+//     }
+// }
+
+// console.log( prime(4));
+
+// //promises with fetch api
+// let  p = fetch("https://jsonplaceholder.typicode.com/posts/1");
+
+// p.then((value)=>{
+//     console.log(value);
+//     return value.json();
+//     // return value.text();
+
+
+// }).then((value1)=>{
+//     console.log(value1);
+// })
+
+//post fetch API
+// async function createTodo(){
+// let options ={
+//     method :'POST',
+//     headers:{
+//         'Content-type':'application/json'
+//     },
+//     body: JSON.stringify({
+    
+//         "id": 101,
+//         "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//         "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+//     }),
+
+
+// }
+// let a = await fetch('https://jsonplaceholder.typicode.com/posts', options);
+// let response = await a.json();
+// return response;
+ 
+// }
+
+// async function gettODO(id){
+//      let a = await fetch('https://jsonplaceholder.typicode.com/posts');
+//      let r = await a.json();
+//      return r.find(post => post.id === id);
+// }
+
+// // let a = fetch(" fetch('https://jsonplaceholder.typicode.com/posts', options);")
+// // a.then((value)=>value.json()).then((value2)=>console,log(value2));
+
+
+// async function mainFun(){
+//     let todo = await createTodo()
+
+//     console.log(await gettODO(101));
+//      console.log(todo);
+// }
+ 
+// mainFun()
+
+// async function createTodo() {
+//     let options = {
+//         method: 'POST',
+//         headers: {
+//             'Content-type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             "id": 11,
+//             "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//             "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+//         }),
+//     }
+//     let a = await fetch('https://jsonplaceholder.typicode.com/posts', options);
+//     let response = await a.json();
+//     console.log('Create response:', response); 
+//     return response;
+// }
+
+
+
+// async function mainFun() {
+//     let todo = await createTodo();
+//     console.log('Created Todo:', todo);
+    
+// }
+
+// mainFun();
+//cookie
+// alert(document.cookie)
+
+// let key = prompt("Enter the key of your choice");
+// let value = prompt("Enter the value of your choice")
+
+// localStorage.setItem(key, value)
+// console.log(`${key} = ${value}`);
+// console.log(`The value of ${key} at is ${localStorage.getItem(key)}`);
+
+// if(key == 0 ){
+//     localStorage.clear();
+// }
+
+
+// let url = "https://jsonplaceholder.typicode.com/posts"
+// let response = fetch(url)
+
+// response.then((v)=>{
+//     return v.json();
+// }
+// ).then((contents)=>{
+//     ihtml=""
+//     console.log(contents);
+
+//     for(item in contents){
+//         console.log(contents[item]);
+//         ihtml += ` 
+//         <div class="card" style="width: 20rem;">
+//             <img src="https://tse4.mm.bing.net/th/id/OIP.CEJZdk7LfdT0LWq3KwIjAwHaE7?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+//             <div class="card-body">
+//               <h5 class="card-title">Learn To Code </h5>
+//                 <p class="card-text">${contents[item].id}</p>
+//               <p class="card-text">${contents[item].title}</p>
+//             <p class="card-text">${contents[item].body}</p>
+
+//               <a href="#" class="btn btn-primary">Join Now</a>
+//             </div>
+//           </div>
+        
+//     `
+//     }
+    
+// cardContainer.innerHTML = ihtml;
+// })
+
+
+let a = prompt("Enter the note here");
+
+localStorage.setItem("note", a);
+
+let c = confirm("Do yoiu wanna delete the note")
+if(c){
+    localStorage.removeItem("note")
+    alert("Note is deleted successfully");
 }
 
-fetchdata1();
+
+let fruits = ["Apple", "Banana", "Cherry"];
+
+let secondFruit = fruits[1];
+
+
+fruits[2] = "Orange"; 
+
+fruits.push("Grapes"); 
+fruits.unshift("Mango"); 
+
+
+let lastFruit = fruits.pop(); 
+let firstFruit = fruits.shift(); 
+
+
+for (let fruit of fruits) {
+    console.log(fruit); 
+}
+
+
+let upperFruits = fruits.map(fruit => fruit.toUpperCase()); 
+
+
+let longFruits = fruits.filter(fruit => fruit.length > 5);
+
+// 9. Array Methods: reduce
+let concatenatedFruits = fruits.reduce((acc, fruit) => acc + ', ' + fruit);
+
+// 10. Find Elements
+let fruitWithB = fruits.find(fruit => fruit.startsWith('B'));
+
+// 11. Sort an Array
+fruits.sort(); 
+
+// 12. Array of Objects
+let students = [
+    { name: 'Alice', age: 20, grade: 'A' },
+    { name: 'Bob', age: 22, grade: 'B' },
+    { name: 'Charlie', age: 21, grade: 'C' }
+];
+
+// 13. Array Methods with Objects: map and filter
+let studentNames = students.map(student => student.name); 
+let gradeAStudents = students.filter(student => student.grade === 'A');
+
+
+let hasGradeA = students.some(student => student.grade === 'A');
+let allOlderThan18 = students.every(student => student.age > 18); 
