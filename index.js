@@ -276,47 +276,48 @@
 // }
 
 
-// let url = "https://jsonplaceholder.typicode.com/posts"
-// let response = fetch(url)
+let url = "https://jsonplaceholder.typicode.com/posts"
+let response = fetch(url)
 
-// response.then((v)=>{
-//     return v.json();
-// }
-// ).then((contents)=>{
-//     ihtml=""
-//     console.log(contents);
-
-//     for(item in contents){
-//         console.log(contents[item]);
-//         ihtml += ` 
-//         <div class="card" style="width: 20rem;">
-//             <img src="https://tse4.mm.bing.net/th/id/OIP.CEJZdk7LfdT0LWq3KwIjAwHaE7?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
-//             <div class="card-body">
-//               <h5 class="card-title">Learn To Code </h5>
-//                 <p class="card-text">${contents[item].id}</p>
-//               <p class="card-text">${contents[item].title}</p>
-//             <p class="card-text">${contents[item].body}</p>
-
-//               <a href="#" class="btn btn-primary">Join Now</a>
-//             </div>
-//           </div>
-        
-//     `
-//     }
-    
-// cardContainer.innerHTML = ihtml;
-// })
-
-
-let a = prompt("Enter the note here");
-
-localStorage.setItem("note", a);
-
-let c = confirm("Do yoiu wanna delete the note")
-if(c){
-    localStorage.removeItem("note")
-    alert("Note is deleted successfully");
+response.then((v)=>{
+    return v.json();
 }
+).then((contents)=>{
+    ihtml=""
+    console.log(contents);
+
+    for(item in contents){
+        console.log(item.id);
+        console.log(contents[item]);
+        ihtml += ` 
+        <div class="card" style="width: 20rem;">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.CEJZdk7LfdT0LWq3KwIjAwHaE7?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Learn To Code </h5>
+                <p class="card-text">${contents[item].id}</p>
+              <p class="card-text">${contents[item].title}</p>
+            <p class="card-text">${contents[item].body}</p>
+
+              <a href="#" class="btn btn-primary">Join Now</a>
+            </div>
+          </div>
+        
+    `
+    }
+    
+cardContainer.innerHTML = ihtml;
+})
+
+
+// let a = prompt("Enter the note here");
+
+// localStorage.setItem("note", a);
+
+// let c = confirm("Do yoiu wanna delete the note")
+// if(c){
+//     localStorage.removeItem("note")
+//     alert("Note is deleted successfully");
+// }
 
 
 let fruits = ["Apple", "Banana", "Cherry"];
@@ -367,3 +368,268 @@ let gradeAStudents = students.filter(student => student.grade === 'A');
 
 let hasGradeA = students.some(student => student.grade === 'A');
 let allOlderThan18 = students.every(student => student.age > 18); 
+
+//prototype of prototype of an object- but not use much  
+let x = {
+    name: "vidhi",
+    sub : "Javascript"
+}
+console.log(x);
+
+let p = {
+    run: ()=>{
+        console.log("run");
+    }
+}
+let y={
+    surname:"Rana"
+}
+p.__proto__= y;
+
+
+x.__proto__= p;
+x.run();
+console.log(x.surname)
+
+
+// class RailwayForm{
+
+//     submit(){
+//         console.log(this.name +  ": Form is Submitted successfully"+ "your train no is: " + this.trainNo );
+//     }
+//     cancel(){
+//         console.log(this.name + ": This Form is cancelled");
+//     }
+//     fill(givename, trainno){
+//         this.name = givename;
+//         this.trainNo = trainno
+//     }
+// }
+
+// let priti = new RailwayForm();
+// priti.fill("priti", 467839);
+// let prerna = new RailwayForm();
+// prerna.fill("prerna",573389);
+
+
+// prerna.submit();
+// priti.submit();
+// priti.cancel();
+
+// class RailwayForm1 {
+//     constructor(givename, trainno) {
+//         console.log("The constructor is called..."+ trainno + givename);
+//         this.name = givename;
+//         this.trainNo = trainno;
+//     }
+    
+//     submit() {
+//         console.log(this.name + ": Form is submitted successfully. Your train no is: " + this.trainNo);
+//     }
+
+//     cancel() {
+//         console.log(this.name + ": This form is cancelled");
+//     }
+// }
+
+// let priti = new RailwayForm1("Priti", 467839);
+// let prerna = new RailwayForm1("Prerna", 573389);
+
+// prerna.submit();
+// priti.submit();
+// priti.cancel();
+
+
+//inheritance 
+
+class Animal{
+    constructor(givename, color) {
+                console.log("The constructor is called..."+ color + givename);
+                this.name = givename;
+                this.colors = color;
+            }
+
+            run(){
+                console.log(this.name + " is running")
+            }
+            bark(){
+                console.log(this.name + " is barking")
+            }       
+}
+
+class Monkey extends Animal{
+    eat(){
+        console.log(this.name+ " is eating banana")
+    }
+}
+
+let monkey = new Monkey("chimpu", "grey")
+monkey.eat();
+monkey.run();
+
+class RailwayForm {
+    constructor(givename, trainno) {
+        console.log("The constructor is called... " + trainno + " " + givename);
+        this.name = givename;
+        this.trainNo = trainno;
+    }
+
+    submit() {
+        console.log(this.name + ": Form is submitted successfully. Your train no is: " + this.trainNo);
+    }
+
+    cancel() {
+        console.log(this.name + ": This form is cancelled");
+    }
+
+    requestdays(days) {
+        console.log(`I want to travel for ${days} days`);
+    }
+}
+
+class ExpressRailwayForm extends RailwayForm {
+    constructor(givename, trainno, expressCharge) {
+        super(givename, trainno); 
+        this.expressCharge = expressCharge;
+    }
+
+    submit() {
+        super.submit(); 
+        console.log(this.name + ": Express charge is: " + this.expressCharge);
+    }
+
+    cancel() {
+        super.cancel(); 
+        console.log(this.name + ": Express charge refund is: " + this.expressCharge / 2);
+    }
+
+    requestdays(days) {
+        super.requestdays(days);
+        console.log(this.name + " days are granted ");
+    }
+}
+
+let priti = new RailwayForm("Priti", 467839);
+let prerna = new ExpressRailwayForm("Prerna", 573389, 100);
+
+priti.submit();
+priti.cancel();
+priti.requestdays(2);
+
+prerna.submit();
+prerna.cancel();
+prerna.requestdays(3);
+
+
+class Student{
+    constructor(name){
+        // this._name = name;
+        this.name = name;
+    }
+
+    lunchTime(){
+        console.log(`Lunch time of ${this.name} is at 1' Oclock`);
+    }
+    
+    // lunchTime(){
+    //     console.log("Lunch time of " + Student.capitalize(this.name) + "is at 1' Oclock");
+    // }
+
+    // get name(){
+    //     return this._name
+    // }
+    static capitalize(name){
+        return name.charAt(0).toUpperCase() + name.substr(1,name.length);
+    }
+}
+
+let j = new Student(Student.capitalize("vidhi"));
+console.log(j.name)
+j.lunchTime();
+
+
+class Complex{
+    constructor(real, imaginary){
+        this.real = real ;
+        this.imaginary = imaginary;
+
+    }
+    add(num){
+this.real = this.real + num.real;
+this.imaginary = this.imaginary + num.imaginary;
+    }
+}
+
+let a = new Complex(2,4);
+let b = new Complex(4,5)
+// a.add(b);
+b.add(a)
+console.log(a.real, a.imaginary)
+console.log(b.real,b.imaginary)
+
+class Password {
+    constructor(){
+        console.log("-----Welcome to Password Generater------");
+        this.pass = ""
+    }
+    generatePassword(len){
+        let char = "abcdefghijklmnopqrstuvwxyz";
+        let numbers = "1234567890";
+        let special = "!@#$%^&*()-=";
+
+        if(len<3){
+            console.log("Your password should be more than three characters");
+        }
+        else {
+            let i = 0;
+            while(i < len){
+                this.pass += char[Math.floor(Math.random()* char.length)]
+                this.pass += numbers[Math.floor(Math.random()* numbers.length)]
+                this.pass += special[Math.floor(Math.random()* special.length)]
+                i+=3;
+
+            }
+            return this.pass
+        }
+   
+    }
+
+}
+let p1 = new Password();
+
+console.log(p1.generatePassword(9))
+
+
+// (async () => {
+//     const createPromise = () => new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(345); 
+//         }, 3000);
+//     });
+
+//     try {
+//         let r = await createPromise();
+//         console.log(r);  
+
+//         let s = await createPromise();
+//         console.log(s); 
+
+//         let t = await createPromise();
+//         console.log(t);  // Should log 345 after another 3 seconds
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// })();
+
+
+let names = ["vidhi","riya"]
+
+for(let name in names ){
+  console.log(name);
+}
+
+let names1 = ["vidhi","riya"]
+
+for(let name of names1 ){
+  console.log(name);
+}
