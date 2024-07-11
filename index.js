@@ -276,37 +276,37 @@
 // }
 
 
-let url = "https://jsonplaceholder.typicode.com/posts"
-let response = fetch(url)
+// let url = "https://jsonplaceholder.typicode.com/posts"
+// let response = fetch(url)
 
-response.then((v)=>{
-    return v.json();
-}
-).then((contents)=>{
-    ihtml=""
-    console.log(contents);
+// response.then((v)=>{
+//     return v.json();
+// }
+// ).then((contents)=>{
+//     ihtml=""
+//     console.log(contents);
 
-    for(item in contents){
-        console.log(item.id);
-        console.log(contents[item]);
-        ihtml += ` 
-        <div class="card" style="width: 20rem;">
-            <img src="https://tse4.mm.bing.net/th/id/OIP.CEJZdk7LfdT0LWq3KwIjAwHaE7?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Learn To Code </h5>
-                <p class="card-text">${contents[item].id}</p>
-              <p class="card-text">${contents[item].title}</p>
-            <p class="card-text">${contents[item].body}</p>
+//     for(item in contents){
+//         console.log(item.id);
+//         console.log(contents[item]);
+//         ihtml += ` 
+//         <div class="card" style="width: 20rem;">
+//             <img src="https://tse4.mm.bing.net/th/id/OIP.CEJZdk7LfdT0LWq3KwIjAwHaE7?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+//             <div class="card-body">
+//               <h5 class="card-title">Learn To Code </h5>
+//                 <p class="card-text">${contents[item].id}</p>
+//               <p class="card-text">${contents[item].title}</p>
+//             <p class="card-text">${contents[item].body}</p>
 
-              <a href="#" class="btn btn-primary">Join Now</a>
-            </div>
-          </div>
+//               <a href="#" class="btn btn-primary">Join Now</a>
+//             </div>
+//           </div>
         
-    `
-    }
+//     `
+//     }
     
-cardContainer.innerHTML = ihtml;
-})
+// cardContainer.innerHTML = ihtml;
+// })
 
 
 // let a = prompt("Enter the note here");
@@ -633,3 +633,145 @@ let names1 = ["vidhi","riya"]
 for(let name of names1 ){
   console.log(name);
 }
+
+
+//destructuring of array 
+let arr = [3,5,4,6,7,8,1]
+// let [w,z] = arr
+// console.log(w, z)
+// let [w, z,...rest] = arr
+// console.log(w, z, rest)
+let [w , , ,...rest] = arr
+console.log( w, rest)
+
+let obj = {d:1, c:2}
+let {d,c} = obj
+console.log(d,c)
+
+
+//spread operator 
+let arr1 = [2,5,6]
+let obj1 = {...arr1}
+console.log(obj1)
+
+
+function sum(v1,v2,v3){
+return v1 + v2 + v3; 
+}
+
+console.log(sum(...arr1));
+
+let numberOne = [1,3,5,6]
+let numberTwo = [1,3]
+console.log(...numberOne, ...numberTwo);
+
+const myVehicle = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
+  }
+  
+  const updateMyVehicle = {
+    type: 'car',
+    year: 2021,
+    color: 'yellow'
+  }
+  
+  const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+  console.log(myUpdatedVehicle)
+
+  //this is not iterable only array can convert into object
+//   let ob3 = {a:1, b:4}
+//   let array = [...ob3]/*/*8
+//   console.log(array);
+
+const obj4 = { ...true, ..."vidhiRanaAndiamGirl", ...100 };
+console.log(obj4);
+
+// function myFunction(x, y, z) {
+//     return x+y+z;
+// }
+// const args = [0, 1, 2];
+// console.log(myFunction.apply(null, args));
+
+function myFunction(x, y, z) {
+    return [x,y,z]
+}
+const args = [0, 1, 2];
+console.log(myFunction(...args));
+
+const datefields = [2003,6,24]
+const myDate = new Date(...datefields)
+console.log(myDate)
+
+let food = ["pizza", "burger", "pasta"]
+let junkFood = ["noodles",...food, "enchiladas", "qasedilas"];
+console.log(junkFood);
+
+let f = [[1],[2],[3]];
+let h = [...f];
+
+console.log(h.shift().shift());
+console.log(f);
+
+// const obj7 = { foo: "bar", x: 42 };
+// const obj2 = { bar: "baz", x: 13 };
+
+// const mergedObj = { ...obj7, ...obj2 };
+// console.log(mergedObj);
+
+
+let obj5 = {
+    name : "vidhi",
+    company :"ABC",
+    address : "xyz"
+}
+// console.log({...obj5, name:"priya", company: "CHG"});
+console.log({name:"priya", company: "CHG", ...obj5})
+
+
+//hoisting
+// console.log(sum(2,3))
+// function sum(a,b){
+// return a+b;
+// }
+
+// console.log(a1);
+// var a1= 5;//declartion hoisted on the top but initialization is not
+// console.log(a1);
+
+
+//CLASS EXPRESSION
+const Rectangle = class {
+    constructor(height, width) {
+      this.height = height;
+      this.width = width;
+    }
+    area() {
+      return this.height * this.width;
+    }
+  };
+  
+
+let areaRect = new Rectangle(3,5)
+console.log(areaRect.area())
+
+
+//pratice question
+let q = async (text) =>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(text)
+        },2000)
+    })
+}
+
+(
+    async ()=>{
+        let text = await q("world")
+        console.log(text);
+        text = await q("hello")
+        console.log(text)
+    }
+)()
+
