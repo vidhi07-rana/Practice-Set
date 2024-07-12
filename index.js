@@ -694,84 +694,263 @@ console.log(obj4);
 // const args = [0, 1, 2];
 // console.log(myFunction.apply(null, args));
 
-function myFunction(x, y, z) {
-    return [x,y,z]
-}
-const args = [0, 1, 2];
-console.log(myFunction(...args));
-
-const datefields = [2003,6,24]
-const myDate = new Date(...datefields)
-console.log(myDate)
-
-let food = ["pizza", "burger", "pasta"]
-let junkFood = ["noodles",...food, "enchiladas", "qasedilas"];
-console.log(junkFood);
-
-let f = [[1],[2],[3]];
-let h = [...f];
-
-console.log(h.shift().shift());
-console.log(f);
-
-// const obj7 = { foo: "bar", x: 42 };
-// const obj2 = { bar: "baz", x: 13 };
-
-// const mergedObj = { ...obj7, ...obj2 };
-// console.log(mergedObj);
-
-
-let obj5 = {
-    name : "vidhi",
-    company :"ABC",
-    address : "xyz"
-}
-// console.log({...obj5, name:"priya", company: "CHG"});
-console.log({name:"priya", company: "CHG", ...obj5})
-
-
-//hoisting
-// console.log(sum(2,3))
-// function sum(a,b){
-// return a+b;
+// function myFunction(x, y, z) {
+//     return [x,y,z]
 // }
+// const args = [0, 1, 2];
+// console.log(myFunction(...args));
 
-// console.log(a1);
-// var a1= 5;//declartion hoisted on the top but initialization is not
-// console.log(a1);
+// const datefields = [2003,6,24]
+// const myDate = new Date(...datefields)
+// console.log(myDate)
+
+// let food = ["pizza", "burger", "pasta"]
+// let junkFood = ["noodles",...food, "enchiladas", "qasedilas"];
+// console.log(junkFood);
+
+// let f = [[1],[2],[3]];
+// let h = [...f];
+
+// console.log(h.shift().shift());
+// console.log(f);
+
+// // const obj7 = { foo: "bar", x: 42 };
+// // const obj2 = { bar: "baz", x: 13 };
+
+// // const mergedObj = { ...obj7, ...obj2 };
+// // console.log(mergedObj);
 
 
-//CLASS EXPRESSION
-const Rectangle = class {
-    constructor(height, width) {
-      this.height = height;
-      this.width = width;
-    }
-    area() {
-      return this.height * this.width;
-    }
-  };
+// let obj5 = {
+//     name : "vidhi",
+//     company :"ABC",
+//     address : "xyz"
+// }
+// // console.log({...obj5, name:"priya", company: "CHG"});
+// console.log({name:"priya", company: "CHG", ...obj5})
+
+
+// //hoisting
+// // console.log(sum(2,3))
+// // function sum(a,b){
+// // return a+b;
+// // }
+
+// // console.log(a1);
+// // var a1= 5;//declartion hoisted on the top but initialization is not
+// // console.log(a1);
+
+
+// //CLASS EXPRESSION
+// const Rectangle = class {
+//     constructor(height, width) {
+//       this.height = height;
+//       this.width = width;
+//     }
+//     area() {
+//       return this.height * this.width;
+//     }
+//   };
   
 
-let areaRect = new Rectangle(3,5)
-console.log(areaRect.area())
+// let areaRect = new Rectangle(3,5)
+// console.log(areaRect.area())
 
 
-//pratice question
-let q = async (text) =>{
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(text)
-        },2000)
-    })
-}
+// //pratice question
+// let q = async (text) =>{
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve(text)
+//         },2000)
+//     })
+// }
 
-(
-    async ()=>{
-        let text = await q("world")
-        console.log(text);
-        text = await q("hello")
-        console.log(text)
+// (
+//     async ()=>{
+//         let text = await q("world")
+//         console.log(text);
+//         text = await q("hello")
+//         console.log(text)
+//     }
+// )()
+
+// //Arrow function example
+// const multiplyAndAdd = (a, b, c) => {
+//     const product = a * b;
+//     return product + c;
+//   };
+  
+ 
+//   console.log(multiplyAndAdd(2, 3, 4)); 
+//   console.log(multiplyAndAdd(1, 5, 6)); 
+
+
+
+
+//   let regexr = /very/g
+//   let str = "i have very very less anger issue"
+//   console.log(str.replace(regexr,"VERY"))
+  
+// // Define an object representing a person
+// let person = {
+//     firstName: "jiya",
+//     lastName: "darshan",
+//     birthYear: 1990,
+    
+
+//     calculateAge: function() {
+//         let currentYear = new Date().getFullYear();
+//         return currentYear - this.birthYear;
+//     },
+    
+   
+//     getFullName: function() {
+//         return this.firstName + " " + this.lastName;
+//     }
+// };
+
+
+// console.log(person.getFullName());
+// console.log(person.calculateAge());
+
+
+// //math and its methods
+// let num = -42;
+// console.log("Math.abs(" + num + "): " + Math.abs(num)); 
+
+// num = 4.7;
+// console.log("Math.ceil(" + num + "): " + Math.ceil(num)); 
+
+// num = 4.7;
+// console.log("Math.floor(" + num + "): " + Math.floor(num)); 
+
+// num = 4.5;
+// console.log("Math.round(" + num + "): " + Math.round(num)); 
+
+// num = 4.4;
+// console.log("Math.round(" + num + "): " + Math.round(num)); 
+
+// console.log("Math.max(10, 20, 30): " + Math.max(10,20,30)); 
+
+// console.log("Math.min(10, 20, 30): " + Math.min(10, 20, 30));
+
+// let base = 2;
+// let exponent = 3;
+// console.log("Math.pow(" + base + ", " + exponent + "): " + Math.pow(base, exponent));
+
+
+// num = 16;
+// console.log("Math.sqrt(" + num + "): " + Math.sqrt(num)); 
+
+// console.log("Math.random(): " + Math.random()); 
+
+
+// num = 4.9;
+// console.log("Math.trunc(" + num + "): " + Math.trunc(num)); 
+
+// let min = 1;
+// let max = 10;
+// let randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+// console.log("Random integer between " + min + " and " + max + ": " + randomInt);
+
+
+//arr to obj
+// const errr = [1,2,3,4];
+// const fjk = {...errr}
+// console.log(fjk)
+
+
+//Optional chaining '?.'
+let person1 = {
+    name :"maria",
+    age : 23,
+    vehical:{
+        // year : 2021,
+        warranty:{
+            expireSafetyLisence: "5 years"
+        }
     }
-)()
+  
+}
+// let personVehical = person1.vehical ? person.vehical.year : undefined ;
 
+ let personVehical = person1.vehical?.year ?? 1980;
+ let personSafety = person1.vehical?.warranty?.expireSafetyLisence;
+
+ console.log(personSafety);
+console.log(personVehical);
+
+
+// Nullish Coalescing Operator
+function whichgreatervalue(){
+    return {
+        cash : 100000
+    }
+}
+let greatervalue = whichgreatervalue().cash || 4000;
+console.log(greatervalue);  
+
+// let email =""
+// let id = Symbol("id")
+// let empolyee ={
+//     name :"maria",
+//     age : 23,
+//     [id]:1
+// }
+// for(let key in empolyee){
+//     console.log(key)
+// }
+// empolyee[email]="test@test.com"
+// console.log(empolyee[id])
+// console.log(empolyee);
+
+let s1 = Symbol();
+let s2 = Symbol(23);
+let s3 = Symbol("refrfrkpf");
+console.log(typeof s1)
+console.log(typeof s2)
+console.log(typeof s3)
+
+console.log(Symbol()=== Symbol())
+console.log(Symbol()== Symbol())
+
+console.log(Symbol.for(123)== Symbol(123))
+console.log(Symbol.for(123)=== Symbol.for(123))
+
+
+//set
+
+let myArray = [1,4,5];
+// console.log({...myArray})
+let set = new Set(myArray)
+// let uniqueArray = [...set];
+// console.log(uniqueArray);
+// console.log(myArray)
+// console.log(set);
+
+// set.add(6);
+// console.log(set);
+
+let mySet = new Set();
+
+
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(4); 
+
+
+console.log("My Set: ", mySet); 
+
+
+mySet.delete(2);
+console.log("After deleting 2, my Set: ", mySet);
+
+console.log("Iterating over mySet:");
+mySet.forEach(value => {
+    console.log(value);
+});
+
+mySet.clear();
+console.log("After clearing, mySet: ", mySet);
