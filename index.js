@@ -952,5 +952,168 @@ mySet.forEach(value => {
     console.log(value);
 });
 
-mySet.clear();
-console.log("After clearing, mySet: ", mySet);
+// mySet.clear();
+// console.log("After clearing, mySet: ", mySet);
+
+console.log(mySet.has(3));
+
+console.log(mySet.size)
+
+//Map
+
+const myMap = new Map([['name','vidhi'],['surname','Rana']]);
+console.log(myMap);
+
+//maping the values in any empty objects, than we can use Map method.
+const e = {};
+const o = {};
+
+// const mymap = new Map([[e , 'e'],[o, 'o']]);
+
+//  const mymap = new Map([[{} , 'e'],[{}, 'o']]);
+
+const mymap = new Map();
+
+// mymap.set({},'c')
+mymap.set('w',2);
+mymap.set('v',8);
+mymap.set('x',2);
+
+// mymap.delete('w',2);
+// mymap.delete(o); // use key
+
+
+// for(let [k,v] of mymap){
+//     console.log(k, ':' , v);
+// }
+//in map forEach
+mymap.forEach((value,key,map)=>{
+    console.log("the value of "+ key + " is " + value)
+});
+
+console.log(mymap);
+
+//in array forEach
+
+const arrew = [1,4,6,7,8,9];
+
+// arrew.forEach((ele, index, arr)=>{
+//     console.log("the " + index + " is "+ ele);
+// })
+const myMaawp = new Map();
+
+
+myMaawp.set('first', 1);
+myMaawp.set('second', 2);
+myMaawp.set('third', 3);
+
+// myMaawp.forEach((value, key, map) => {
+//     map.set(key, value * 2); 
+// });
+console.log(myMaawp.get("first"))
+
+// console.log(myMaawp);
+// // const arrr = ["vidhi","priya"]
+// const object= new Set(["vidhi","priya"])
+// const obj34j = {surname:"patel"}
+
+// object.add(obj34j);
+// console.log(object);
+
+const wMap = new WeakMap();
+    // // const wSet = new WeakSet();
+    // const ob1 = {};
+    // const ob2 ={};
+    // wMap.set(ob1,"private");
+    // wMap.set(ob2, "public");
+
+    // //WeakMap is not iterable same as weakSet 
+    // // wMap.forEach((value)=>{
+    // //     console.log(value)
+    // // })
+    // console.log(wMap)
+
+    // recursion
+    function factorial(n) {
+        if (n === 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+    
+    console.log(factorial(5));
+
+
+    function countDown(n){
+        if(n == 0){
+            return;
+        }
+        console.log(n);
+        countDown(n-1)
+    }
+   countDown(3);
+
+
+   const tree = {
+    value: 1,
+    children: [
+        {
+            value: 2,
+            children: [
+                { value: 4, children: [] },
+                { value: 5, children: [] }
+            ]
+        },
+        {
+            value: 3,
+            children: [
+                { value: 6, children: [] },
+                { value: 7, children: [] }
+            ]
+        }
+    ]
+};
+
+function traverseTree(node) {
+   
+    console.log(node.value)
+    node.children.forEach(value => {  traverseTree(value)});
+}
+
+traverseTree(tree);
+// Output:
+// 1 -childern of value one 
+// 2 - children of children
+// 4 -childen of children of children 
+// 5  -childen of children of children
+// 3  children of children
+// 6   -childen of children of children
+// 7 -childen of children of children
+
+
+
+// function borrowing from other object and using in another object
+const userObject ={
+    name :"Priya patel",
+    Age :29,
+    companyPos:"Team Leader",
+   
+}
+let company= function(){
+    console.log(this.name+ " , " + this.Age);
+        }
+company.call(userObject);
+
+const userObject2 ={
+    name :"Prapti patel",
+    Age :26,
+    companyPos:"Team Manager",
+}
+company.call(userObject2);
+
+let companyDetail = company.bind(userObject);
+console.log(companyDetail);
+companyDetail()
+
+
+
