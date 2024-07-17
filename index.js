@@ -222,7 +222,7 @@
 // }
 
 // // let a = fetch(" fetch('https://jsonplaceholder.typicode.com/posts', options);")
-// // a.then((value)=>value.json()).then((value2)=>console,log(value2));
+// // a.then((value)=>value.json()).then((value2)=>console.log(value2));
 
 
 // async function mainFun(){
@@ -862,34 +862,34 @@ console.log(obj4);
 
 
 //Optional chaining '?.'
-let person1 = {
-    name :"maria",
-    age : 23,
-    vehical:{
-        // year : 2021,
-        warranty:{
-            expireSafetyLisence: "5 years"
-        }
-    }
+// let person1 = {
+//     name :"maria",
+//     age : 23,
+//     vehical:{
+//         // year : 2021,
+//         warranty:{
+//             expireSafetyLisence: "5 years"
+//         }
+//     }
   
-}
+// }
 // let personVehical = person1.vehical ? person.vehical.year : undefined ;
 
- let personVehical = person1.vehical?.year ?? 1980;
- let personSafety = person1.vehical?.warranty?.expireSafetyLisence;
+//  let personVehical = person1.vehical?.year ?? 1980;
+//  let personSafety = person1.vehical?.warranty?.expireSafetyLisence;
 
- console.log(personSafety);
-console.log(personVehical);
+//  console.log(personSafety);
+// console.log(personVehical);
 
 
-// Nullish Coalescing Operator
-function whichgreatervalue(){
-    return {
-        cash : 100000
-    }
-}
-let greatervalue = whichgreatervalue().cash || 4000;
-console.log(greatervalue);  
+// // Nullish Coalescing Operator
+// function whichgreatervalue(){
+//     return {
+//         cash : 100000
+//     }
+// }
+// let greatervalue = whichgreatervalue().cash || 4000;
+// console.log(greatervalue);  
 
 // let email =""
 // let id = Symbol("id")
@@ -903,20 +903,20 @@ console.log(greatervalue);
 // }
 // empolyee[email]="test@test.com"
 // console.log(empolyee[id])
-// console.log(empolyee);
+// // console.log(empolyee);
 
-let s1 = Symbol();
-let s2 = Symbol(23);
-let s3 = Symbol("refrfrkpf");
-console.log(typeof s1)
-console.log(typeof s2)
-console.log(typeof s3)
+// let s1 = Symbol();
+// let s2 = Symbol(23);
+// let s3 = Symbol("refrfrkpf");
+// console.log(typeof s1)
+// console.log(typeof s2)
+// console.log(typeof s3)
 
-console.log(Symbol()=== Symbol())
-console.log(Symbol()== Symbol())
+// console.log(Symbol()=== Symbol())
+// console.log(Symbol()== Symbol())
 
-console.log(Symbol.for(123)== Symbol(123))
-console.log(Symbol.for(123)=== Symbol.for(123))
+// console.log(Symbol.for(123)== Symbol(123))
+// console.log(Symbol.for(123)=== Symbol.for(123))
 
 
 //set
@@ -932,37 +932,37 @@ let set = new Set(myArray)
 // set.add(6);
 // console.log(set);
 
-let mySet = new Set();
+// let mySet = new Set();
 
 
-mySet.add(1);
-mySet.add(2);
-mySet.add(3);
-mySet.add(4); 
+// mySet.add(1);
+// mySet.add(2);
+// mySet.add(3);
+// mySet.add(4); 
 
 
-console.log("My Set: ", mySet); 
+// console.log("My Set: ", mySet); 
 
 
-mySet.delete(2);
-console.log("After deleting 2, my Set: ", mySet);
+// mySet.delete(2);
+// console.log("After deleting 2, my Set: ", mySet);
 
-console.log("Iterating over mySet:");
-mySet.forEach(value => {
-    console.log(value);
-});
+// console.log("Iterating over mySet:");
+// mySet.forEach(value => {
+//     console.log(value);
+// });
 
 // mySet.clear();
 // console.log("After clearing, mySet: ", mySet);
 
-console.log(mySet.has(3));
+// console.log(mySet.has(3));
 
-console.log(mySet.size)
+// console.log(mySet.size)
 
 //Map
 
-const myMap = new Map([['name','vidhi'],['surname','Rana']]);
-console.log(myMap);
+// const myMap = new Map([['name','vidhi'],['surname','Rana']]);
+// console.log(myMap);
 
 //maping the values in any empty objects, than we can use Map method.
 const e = {};
@@ -975,9 +975,9 @@ const o = {};
 const mymap = new Map();
 
 // mymap.set({},'c')
-mymap.set('w',2);
-mymap.set('v',8);
-mymap.set('x',2);
+// mymap.set('w',2);
+// mymap.set('v',8);
+// mymap.set('x',2);
 
 // mymap.delete('w',2);
 // mymap.delete(o); // use key
@@ -987,11 +987,11 @@ mymap.set('x',2);
 //     console.log(k, ':' , v);
 // }
 //in map forEach
-mymap.forEach((value,key,map)=>{
-    console.log("the value of "+ key + " is " + value)
-});
+// mymap.forEach((value,key,map)=>{
+//     console.log("the value of "+ key + " is " + value)
+// });
 
-console.log(mymap);
+// console.log(mymap);
 
 //in array forEach
 
@@ -1000,87 +1000,87 @@ const arrew = [1,4,6,7,8,9];
 // arrew.forEach((ele, index, arr)=>{
 //     console.log("the " + index + " is "+ ele);
 // })
-const myMaawp = new Map();
+// const myMaawp = new Map();
 
 
-myMaawp.set('first', 1);
-myMaawp.set('second', 2);
-myMaawp.set('third', 3);
+// myMaawp.set('first', 1);
+// myMaawp.set('second', 2);
+// myMaawp.set('third', 3);
 
-// myMaawp.forEach((value, key, map) => {
-//     map.set(key, value * 2); 
-// });
-console.log(myMaawp.get("first"))
+// // myMaawp.forEach((value, key, map) => {
+// //     map.set(key, value * 2); 
+// // });
+// console.log(myMaawp.get("first"))
 
-// console.log(myMaawp);
-// // const arrr = ["vidhi","priya"]
-// const object= new Set(["vidhi","priya"])
-// const obj34j = {surname:"patel"}
+// // console.log(myMaawp);
+// // // const arrr = ["vidhi","priya"]
+// // const object= new Set(["vidhi","priya"])
+// // const obj34j = {surname:"patel"}
 
-// object.add(obj34j);
-// console.log(object);
+// // object.add(obj34j);
+// // console.log(object);
 
-const wMap = new WeakMap();
-    // // const wSet = new WeakSet();
-    // const ob1 = {};
-    // const ob2 ={};
-    // wMap.set(ob1,"private");
-    // wMap.set(ob2, "public");
+// const wMap = new WeakMap();
+//     // // const wSet = new WeakSet();
+//     // const ob1 = {};
+//     // const ob2 ={};
+//     // wMap.set(ob1,"private");
+//     // wMap.set(ob2, "public");
 
-    // //WeakMap is not iterable same as weakSet 
-    // // wMap.forEach((value)=>{
-    // //     console.log(value)
-    // // })
-    // console.log(wMap)
+//     // //WeakMap is not iterable same as weakSet 
+//     // // wMap.forEach((value)=>{
+//     // //     console.log(value)
+//     // // })
+//     // console.log(wMap)
 
-    // recursion
-    function factorial(n) {
-        if (n === 0) {
-            return 1;
-        }
-        return n * factorial(n - 1);
-    }
+//     // recursion
+//     function factorial(n) {
+//         if (n === 0) {
+//             return 1;
+//         }
+//         return n * factorial(n - 1);
+//     }
     
-    console.log(factorial(5));
+//     console.log(factorial(5));
 
 
-    function countDown(n){
-        if(n == 0){
-            return;
-        }
-        console.log(n);
-        countDown(n-1)
-    }
-   countDown(3);
+//     function countDown(n){
+//         if(n == 0){
+//             return;
+//         }
+//         console.log(n);
+//         countDown(n-1)
+//     }
+//    countDown(3);
 
 
-   const tree = {
-    value: 1,
-    children: [
-        {
-            value: 2,
-            children: [
-                { value: 4, children: [] },
-                { value: 5, children: [] }
-            ]
-        },
-        {
-            value: 3,
-            children: [
-                { value: 6, children: [] },
-                { value: 7, children: [] }
-            ]
-        }
-    ]
-};
+//    const tree = {
+//     value: 1,
+//     children: [
+//         {
+//             value: 2,
+//             children: [
+//                 { value: 4, children: [] },
+//                 { value: 5, children: [] }
+//             ]
+//         },
+//         {
+//             value: 3,
+//             children: [
+//                 { value: 6, children: [] },
+//                 { value: 7, children: [] }
+//             ]
+//         }
+//     ]
+// };
 
-function traverseTree(node) {
+// function traverseTree(node) {
    
-    console.log(node.value)
-    node.children.forEach(value => {  traverseTree(value)});
-}
+//     console.log(node.value)
+//     node.children.forEach(value => {  traverseTree(value)});
+// }
 
-traverseTree(tree);
+// traverseTree(tree);
 // Output:
 // 1 -childern of value one 
 // 2 - children of children
@@ -1093,27 +1093,143 @@ traverseTree(tree);
 
 
 // function borrowing from other object and using in another object
-const userObject ={
-    name :"Priya patel",
-    Age :29,
-    companyPos:"Team Leader",
+// const userObject ={
+//     name :"Priya patel",
+//     Age :29,
+//     companyPos:"Team Leader",
    
+// }
+// let company= function(){
+//     console.log(this.name+ " , " + this.Age);
+//         }
+// company.call(userObject);
+
+// const userObject2 ={
+//     name :"Prapti patel",
+//     Age :26,
+//     companyPos:"Team Manager",
+// }
+// company.call(userObject2);
+
+// let companyDetail = company.bind(userObject);
+// console.warn(companyDetail);
+// companyDetail()
+
+// //new Function
+
+// let hello = new Function('name', 'return "hello " + name');
+// console.log(hello('vidhi'));
+
+// let sum4 = new Function('a','b', 'return a + b');
+// console.log(sum4(2,4));
+
+
+//Property flags and descriptors
+
+
+const object1 = {
+    name : 'vidhi',
+    surname: 'Rana',
+    Age : 22
 }
-let company= function(){
-    console.log(this.name+ " , " + this.Age);
-        }
-company.call(userObject);
 
-const userObject2 ={
-    name :"Prapti patel",
-    Age :26,
-    companyPos:"Team Manager",
-}
-company.call(userObject2);
+// console.log(JSON.stringify(object1));
+// console.log(object1.name);
 
-let companyDetail = company.bind(userObject);
-console.log(companyDetail);
-companyDetail()
+// console.log(Object.getOwnPropertyDescriptor(object1, "name"));
+
+//it will not able to update
+// Object.defineProperty(object1, "surname", {
+//     writable:false
+// });
+// object1.surname =  "patel;";
+// console.log(object1.surname);
+
+//it will not able to iterate
+// Object.defineProperty(object1, "Age",{
+//     enumerable:false
+// })
+
+// for(let p in object1){
+//     console.log(p);
+// }
+
+// console.log(object1.hasOwnProperty('surname'));
+
+// Object.defineProperty(object1, "Age",{
+//     configurable:false
+// })
+// console.log(object1)
+
+//INSTEAD
+
+const product = {};
+
+// Object.defineProperty(product, "Pname",{
+// value : "pen",
+// writable: true,
+// enumerable: false,
+// configurable:false
+// });
+// console.log(product);
+
+//other approach 
+
+// Object.defineProperties(product,{
+//     Pname:{
+//         value : "pen",
+//         writable: true,
+//         enumerable: false,
+//         configurable:false
+//         },
+//     Price:{
+//         value : 15,
+//         writable: true,
+//         enumerable: false,
+//         configurable:false
+//         }    
+// })
+
+// console.log(product);
 
 
+//GENERATOR 
+// function* generatorsemi(){
+//     console.log("function genrator")
+//     yield 20;
+//     yield 30;
+//     yield 40;
+// }
 
+// let gen = generatorsemi()
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+
+// //example 
+// function* loops(){
+//  for(let i=0; i<=3;i++){
+//     yield i 
+//  }
+// }
+
+// const loopsgen = loops();
+// console.log(loopsgen.next())
+// console.log(loopsgen.next())
+// console.log(loopsgen.next())
+// console.log(loopsgen.next())
+
+// function* fetchGen(){
+//    yield  fetch("https://jsonplaceholder.typicode.com/todos/1");
+//     yield fetch("https://jsonplaceholder.typicode.com/posts");
+    
+// }
+
+// let fcth = fetchGen()
+// fcth.next().value.then((data)=>{
+//     console.log(data)
+//     return fcth.next().value
+// }).then((value)=>{console.log(value)})
+import {sub, summation} from './cal'
+
+console.log(summation(2,4))
