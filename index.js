@@ -1230,6 +1230,114 @@ const product = {};
 //     console.log(data)
 //     return fcth.next().value
 // }).then((value)=>{console.log(value)})
-import {sub, summation} from './cal'
 
-console.log(summation(2,4))
+
+//proxy 
+const ob1 = {};
+Object.defineProperty(ob1,'a',{
+    value:1,
+    configurable: false 
+})
+
+// delete ob1.a;
+
+if(Reflect.deleteProperty(ob1, "a")){
+    console.log("property is deleted ")
+}
+else{
+    console.log("property is not configurable")
+}
+
+// console.log(ob1);
+
+
+//proxy Object
+
+const person ={
+    firstName : "riddhi",
+    surname :"patel",
+    age : 23
+}
+
+// console.log(person)
+const goodPerson = new Proxy(person, {
+    get: function(target, prop, receiver) {
+        console.log(prop + " is being accessed");
+        
+        // Check if the property exists in the target object
+        if (!(prop in target)) {
+            throw new ReferenceError("Unknown Property");
+        }
+
+        // Custom logic for allowedtovote
+        if (prop === "allowedtovote") {
+            return target.age >= 18;
+        }
+
+        // Custom logic for fullname
+        if (prop === "fullname") {
+            return target.firstName + " " + target.surname;
+        }
+
+        // Default behavior for other properties
+        return Reflect.get(target, prop, receiver);
+    },
+    set: function(target, prop, value){
+        if(prop === 'age' && value >100){
+            throw new Error("the Age is not Valid");
+        }
+        return Reflect.set(target, prop, value)
+        // target[prop]=value;
+        // target.age=value;
+
+        return true
+    }
+})
+ console.log(goodPerson)
+
+console.log("------------------------")
+try{
+    goodPerson.age = 10;
+    }catch(err){
+        console.log(err.message);
+        
+    }
+    console.log(goodPerson.age)
+
+// console.log(goodPerson.allowedtovote)
+
+// console.log(goodPerson.fullname)
+// console.log(goodPerson.birthdate);
+
+// console.log(goodPerson.firstName)
+// console.log(goodPerson.surname)
+// console.log(goodPerson.age)
+
+
+//reference type
+
+let personq = {
+name : "rhea"
+}
+let anotherperson =[personq]; //reference
+ personq= null;
+console.log(anotherperson);
+console.log(personq);
+
+
+// personq.surname = "patel"
+// console.log(anotherperson)
+
+//eval
+
+const add = '1 + 2';
+const sub2 = '4 - 2';
+
+
+console.log(add);
+console.log(eval(add));// use to evaluate the string 
+console.log(eval(sub2));// use to evaluate the string 
+console.log(eval('2 + 2 '))
+
+
+

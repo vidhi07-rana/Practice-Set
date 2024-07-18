@@ -4,4 +4,4 @@ function whoiami(name){
 
 export {whoiami}
 
-export * as calc from '../cal.js'
+export * as calc from '../cal.js' 
