@@ -1339,5 +1339,156 @@ console.log(eval(add));// use to evaluate the string
 console.log(eval(sub2));// use to evaluate the string 
 console.log(eval('2 + 2 '))
 
+//BigInt
+console.log(2 ** 53 - 1); 
+console.log(Number.MAX_SAFE_INTEGER);
 
+//THE  RESULT WILL NOT BE ACCURATE
+
+let x1 = Number.MAX_SAFE_INTEGER;
+console.log(x1+1)
+console.log(x1+2)
+
+
+// let y1 =838910123544656
+let y1 =838910123544656n
+
+console.log(typeof y1)
+
+const z = BigInt(85403428040204882048830120);
+console.log(z)
+
+console.log(30n + 10n);
+console.log(30n - 10n);
+console.log(20n > 10);
+console.log(20n == 20);
+console.log(20n == '20');
+console.log(20n === 20);
+console.log(20n + '20');
+
+// console.log(Math.sqrt(16n))-not works with bigint
+
+console.log(10n/3n);
+console.log(10/3);
+
+
+//currying 
+// function addition(a,b,c){
+//     return a + b + c;
+// }
+// const res = addition(1,2,3);
+// console.log(res);
+
+function addition(a){
+    return function (b){
+        return function (c){
+            return a + b + c;
+        }
+    }
+}
+
+// const res = addition(1)(2)(4);
+// console.log(res)
+
+//example
+
+const userObj = {
+name : "vidhi",
+age : 22
+}
+
+function userO(obj){
+    return function (userinfo){
+        return obj[userinfo]
+    }
+}
+
+const res = userO(userObj);
+console.log(res('name'));
+// console.log(res);
+
+//bing method with currying 
+
+
+let multiple22 = function (a,b){
+    console.log(a * b )
+}
+
+let multipl211 = multiple22.bind(this, 2);
+multipl211(3);
+
+
+let multiple = function(a) {
+    return function(b) {
+        console.log(a * b);
+    };
+};
+
+let multipl2 = multiple(2);
+multipl2(3); 
+
+//example
+
+const sandwich = ingred1 => ingred2 =>ingred3=> `${ingred1},${ingred2},${ingred3} `;
+console.log(sandwich("bread")("cheese")("ketchup"));
+
+
+//Unicode 
+let str = 'ABCD'
+// console.log(str.charAt(0));
+ console.log(str.charCodeAt(0));
+console.log(str.substring(1))
+ let num = 65;
+
+console.log( String.fromCharCode(num))
+
+const omega = '\u{3a9}';
+console.log(omega)
+
+const emoji =" \u{1F641}"
+
+console.log(emoji)
+
+const sym = '\u{1F3DD}';
+console.log(sym);
+ 
+
+const sym1 = '\u25B6';
+console.log(sym1);
+
+const sentence = "hey ther its friday";
+const index = 5;
+console.log(`character code at index ${index} is ${sentence.charCodeAt(index)} and the charater is  ${sentence.charAt(index)}`);
+
+
+
+const  len = "😀".length;
+console.log(len)
+
+const len1 = "✌️".length;
+console.log(len1);
+
+const re = /\w{3}/;
+console.log("dom".search(re));
+
+const reg = /\d\d\d-\d\d\d-\d\d\d\d/;
+const str1 = "my number is 968-594-7839";
+const rep = str1.replace(reg, "xxx-xxx-xxxx");
+console.log(rep); 
+
+
+// change the background color to red
+// document.body.style.background = "red";
+
+// change it back after 1 second
+// setTimeout(() => document.body.style.background = "", 3000);
+
+// alert( document.body.firstChild.tagName ); // undefined (not an element)
+// alert( document.body.firstChild.nodeName ); // #comment
+
+// // for document
+// alert( document.tagName ); // undefined (not an element)
+// alert( document.nodeName ); 
+
+document.body.innerHTML = "<h1>hello there!</h1>"
 
