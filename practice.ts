@@ -289,14 +289,14 @@ role : Roles
 
 }
 
-const user1 = {
+const user1:LoginUser = {
     name : "test",
     email : "test@gmail.com",
     password : "euwiur",
     role: Roles.user
 }
 
-const user2 = {
+const user2:LoginUser = {
     name : "test1",
     email : "test1@gmail.com",
     password : "gjtrjoird",
@@ -469,4 +469,159 @@ try {
 }
 
 
+//interface class example
 
+interface TakePhoto {
+    cameraMode : string;
+    filter :string;
+    burst:number
+}
+
+interface Story{
+    createStory():void
+}
+
+class Instagram implements TakePhoto{
+    constructor(
+        public cameraMode : string,
+        public filter : string ,
+        public burst : number,
+        public short :string
+    ){
+    }
+}
+
+
+const insta = new Instagram("Manual","vivid",3,"playful");
+console.log(insta);
+
+class Youtube implements TakePhoto, Story{
+    constructor(
+        public cameraMode : string,
+        public filter : string ,
+        public burst : number,
+        public short :string
+    ){
+    }
+    createStory():void{
+        console.log("HERE CREATE YOUR STORY!!!")
+    }
+}
+
+const utube = new Youtube("Manual","vivid",3,"playful")
+utube.createStory();
+
+
+// function logANDreturn(value1: number | string ): number | string{
+//     console.log(value1)
+//     return value1
+// }
+// logANDreturn(34);
+
+
+//generic
+function logANDreturn<Type>(value1:Type):Type{
+    console.log(value1)
+    return value1
+}
+logANDreturn(34);
+logANDreturn(true);
+logANDreturn("fdrfdrs");
+
+
+// interface Bootle{
+//     brand : string ;
+//     type : string
+// }
+
+// function fourType<T>(val : T):T{
+//     return val;
+// }
+
+// fourType<Bootle>({"brand","type"})
+
+
+const fun = <T>(val : T[]):T => {
+    const index = 3;
+    return val[index]
+
+}
+
+
+const anotherfun = <T,U extends number>(val1 : T, val2:U):object => {
+   return {val1,val2}
+
+}
+
+anotherfun(2,6)
+
+
+class Cart<T>{
+    public cart :T[]=[]
+
+  cartadd(products : T){
+    return this.cart.push(products)
+    }
+}
+
+function provideiD(id : string | null ){
+if(!id){
+    console.log("Provide the id ");
+    return;
+}
+id.toLowerCase()
+
+}
+provideiD("");
+
+function padLeft(padding: number | string, input: string): string {
+    if (typeof padding === "number") {
+      return " - ".repeat(padding) + input;
+    }
+    return padding + input;
+  }
+
+console.log(  padLeft(3,"icon"))
+
+function printAll(strs: string | string[] ) {
+    if (typeof strs === "object") {
+      for (const s of strs) {
+
+        console.log(s);
+      }
+    } else if (typeof strs === "string") {
+      console.log(strs);
+    } 
+  }
+
+  printAll(["write","read"]);
+  
+
+  //narrowing 
+
+  interface User{
+    name: string
+    email: string 
+  }
+
+  interface Admin{
+    name: string
+    email: string
+    isAdmin : boolean 
+  }
+
+const pihy : Admin={
+    name: "EHFRW",
+    email: "FMVKSDE",
+    isAdmin: false
+}
+
+  function adminAccount(per : User | admin){
+    if("isAdmin" in per){
+        return true
+    }
+    return false
+
+  }
+
+  console.log(pihy);
