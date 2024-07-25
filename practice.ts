@@ -621,7 +621,58 @@ const pihy : Admin={
         return true
     }
     return false
-
   }
-
   console.log(pihy);
+
+
+//   let x1 = Math.random() < 0.5 ? 10 : "hello world!";
+//   x1 = 0.2;  
+//   console.log(x1);
+//   x1 = "goodbye!";
+//   console.log(x1);
+
+type fish ={ swim():void};
+type bird ={ fly():void};
+const fi = {swim(){console.log("the fish can swim")}}
+
+function isFish(pet : fish | bird): pet is fish{
+    return (pet as fish).swim() !== undefined
+}
+console.log(fi)
+
+interface Circle{
+    kind : "circle"
+    raduis : number
+}
+interface Square{
+    kind : "square"
+    side : number
+}
+interface Rectangle {
+    kind : "rectangle"
+    length : number ,
+    width : number
+}
+
+type Shape = Circle | Square | Rectangle
+
+function getshape(shape:Shape  ){
+ if(shape.kind === "circle"){
+    return Math.PI * shape.raduis * shape.raduis
+ }
+ else if(shape.kind === "square") {
+    return shape.side * shape.side
+ }
+ else if(shape.kind === "rectangle"){
+    return 1/2 * shape.length * shape.width
+ }
+}
+const circle: Circle = { kind: "circle", raduis: 5 };
+const square: Square = { kind: "square", side: 5 };
+const rectangle: Rectangle = { kind: "rectangle", length: 5, width:4 };
+
+
+
+console.log(getshape(circle));  
+console.log(getshape(square)); 
+console.log(getshape(rectangle));   
