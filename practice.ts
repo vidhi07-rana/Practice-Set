@@ -654,7 +654,7 @@ interface Rectangle {
     width : number
 }
 
-type Shape = Circle | Square | Rectangle
+type Shape = Circle | Square | Rectangle;
 
 function getshape(shape:Shape  ){
  if(shape.kind === "circle"){
@@ -675,4 +675,148 @@ const rectangle: Rectangle = { kind: "rectangle", length: 5, width:4 };
 
 console.log(getshape(circle));  
 console.log(getshape(square)); 
-console.log(getshape(rectangle));   
+console.log(getshape(rectangle));  
+
+
+//union type
+let wgt : string | number ;
+
+//intersections type
+
+let weight :string & number;
+
+
+type draggable ={
+    drag():void
+}
+
+type resizable ={
+    resize():void
+}
+
+type uiType = draggable & resizable;
+
+// variable of uitype
+let uiObject : uiType ={
+    drag:()=> {},
+    resize:()=>{}
+
+}
+
+
+//example 
+
+interface Student {
+    studentId : number,
+    studentName : string
+}
+
+interface Teacher {
+    teacherId : number,
+    teacherName : string 
+}
+
+type intersection = Student & Teacher;
+
+let classRoom : intersection ={
+    studentId : 345,
+    studentName : "prapti patel",
+    teacherId:657,
+    teacherName :"sumit Parmar"
+}
+
+console.log(classRoom.studentName)
+console.log(classRoom.teacherName)
+
+
+//literal type 
+
+function combine(input1 : string | number , input2 : number | string){
+
+let result ;
+
+if(typeof input1 === "number" && typeof input2 === "number"){
+    result = input1 + input2
+  
+}else {
+    result = input1.toString() + input2.toString()
+    
+}
+return result
+
+}
+
+// let com = combine(" local ", " region ");
+let com = combine(67, 879);
+
+console.log(com);
+
+type metric = "centimeter" | "meter"
+
+const m : metric = "centimeter"
+
+function nameFun(name : string | null){
+    if(name){
+        console.log(name.toLocaleUpperCase());
+    }else{
+        console.log("Hola")
+    }
+}
+nameFun(null);
+
+type Direction = 'North' | 'South' | 'East' | 'West';
+
+let move: Direction;
+
+move = 'North'; 
+move = 'South';
+// move = 'Up';    
+
+function setTrafficLight(color: 'Red' | 'Yellow' | 'Green') {
+    console.log(`The traffic light is ${color}`);
+  }
+  
+  setTrafficLight('Red');    
+  setTrafficLight('Yellow'); 
+  setTrafficLight('Green'); 
+//   setTrafficLight('Blue');
+
+//we can also use interface as arrays 
+interface Persons{
+
+    id : number,
+    name : string
+}
+
+const persons : Persons[] =[
+    {id : 1, name :"Riya"},
+    {id : 2, name :"Piya"},
+    {id : 3, name :"Siya"}
+
+]
+
+console.log(persons);
+
+const tuples: [number, string][] = [
+    [1, "apple"],
+    [2, "banana"],
+    [3, "cherry"]
+  ];
+
+  console.log(tuples)
+
+  const numbers: number[] = [1, 2, 3, 4, 5];
+
+const doubleArray=numbers.map((num) => {
+return  num * 2
+});
+
+console.log(doubleArray)
+
+
+let filnum :number[]=[1,2,3,4,5]
+
+const num = filnum.filter((val : number)=>
+    {return val % 2 === 0});
+  
+console.log(num);
