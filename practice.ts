@@ -820,3 +820,106 @@ const num = filnum.filter((val : number)=>
     {return val % 2 === 0});
   
 console.log(num);
+
+//Guard type 
+type alphanumeric = number | string ;
+
+function alpdNum( a : alphanumeric , b: alphanumeric)
+{
+    if(typeof a === "number" && typeof b === "number"){
+        return a + b;
+
+    }
+
+}
+// console.log(alpdNum(5,5));
+
+class Banana{
+     isTasty(): boolean{
+        return true
+    }
+}
+
+class Apple{
+    isJuicy(): boolean{
+       return true
+   }
+}
+
+type fruits = Banana | Apple;
+
+function wantFruit (fruit : fruits): number{
+    let price = 0;
+
+    if(fruit instanceof Banana ){
+        price = fruit.isTasty() ? 5 : 10;
+    }else if(fruit instanceof Apple){
+        price = fruit.isJuicy() ? 10 : 5 ;
+    }
+    return price;
+}
+
+const apple = new Apple();
+const banana = new Banana();
+console.log(wantFruit(banana))
+console.log(wantFruit(apple));
+
+//type assertion
+
+const someString = 'string of'
+const str = (someString as string).length
+const str1 = (<string>someString).length
+console.log(str1);
+console.log(str);
+
+
+const stringNum = (a: number, b : number , c : "add" | "concat"): number | string=>{
+if(c === "add"){
+    return a + b;
+}
+return ' ' + a + b;
+}
+
+
+console.log(stringNum(4,3,"add"));
+
+// const q =(10 as unknown) as string
+
+// console.log(typeof q)
+
+
+
+type Person2 = {
+    name: string;
+    age: number;
+    address: string;
+  };
+  
+  type PartialPerson = {
+    [P in keyof Person2]?: Person2[P];
+  };
+  
+let data : unknown= "string";
+data = 20
+
+let item : any= "string";
+item = 20
+
+type GetReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
+type Func = (a: number, b: number) => string;
+
+type ReturnTypeOfFunc = GetReturnType<Func>; 
+
+const unkn: ReturnTypeOfFunc = "This is a string"; 
+
+
+// Step 2: Assign a function to a variable of type Func
+const unkn1: Func = (a: number, b: number): string => {
+    return `The numbers are ${a} and ${b}`;
+};
+
+// Using the function
+console.log(unkn1(45, 56)); // Output: The numbers are 45 and 56
+
+console.log(unkn)
